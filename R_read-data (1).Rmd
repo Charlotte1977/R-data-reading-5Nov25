@@ -120,7 +120,8 @@ fev_data <- read_csv(here("fev.csv"))
 --> How would you use read_csv with the pipe operator?
 
 ```{r}
-# Add your code here!
+install.packages("here")
+
 ```
 
 Look at the top few rows of the data:
@@ -149,20 +150,26 @@ excel_data <- read_xlsx(filename, sheet = 1) #(to read the first sheet)
 There is a text file in your dataset so you can practice: psa.txt
 
 ```{r}
-# Add your code here!
+library(readr)
+library(here)
+
+psa_data <- read_table(here("psa.txt"))
+
 ```
 
 --> Have a look at the "Useful arguments" section of the data import cheat sheet. 
 Use a few of them when you read in fev.csv and look at the data, is that what you expected?
 
-```{r}
-# Add your code here!
+``{r}
+col_names = FALSE
+
 ```
 
---> Apply the summary function to a tibble. What does it do?
+--> Apply the summary function to a tibble. What does it do?;
 
 ```{r}
-# Add your code here!
+summary(fev_data)
+
 ```
 
 
@@ -190,3 +197,4 @@ max(fev_data$fev)
 mean(fev_data$fev)
 sd(fev_data$fev)
 ```
+
